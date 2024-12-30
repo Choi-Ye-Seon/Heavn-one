@@ -1,0 +1,96 @@
+/* reset(초기화) */
+:root {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    cursor: default;
+    line-height: 1.5;
+    overflow-wrap: break-word;
+    -moz-tab-size: 4;
+    tab-size: 4;
+    --colors--white: whitesmoke;
+    --colors--black: #18181a;
+    --line-height--1-3em: 1.3em;
+    --colors--grey: #999;
+    --font-size--21px: 21px;
+    --line-height--1-1em: 1.1em;
+    --font-size--48px: 48px;
+    --colors--yellow: #f9c518;
+    --colors--light-grey: #d4d4d4;
+    --colors--blue: #172e41;
+    --font-size--16px: 16px;
+    --colors--dark-grey: #212121;
+    --font-size--60px: 60px;
+    --font-size--24px: 24px;
+    --font-size--18px: 18px;
+    --ppneuemontreal:'PPNeueMontreal', sans-serif;
+}
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+  }
+  *,
+:after,
+:before {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  image-rendering: auto;
+}
+button {
+  background: none;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+table {
+  border-collapse: collapse;
+}
+
+/* Fonts */
+@font-face{
+  font-family:'PPNeueMontreal';
+  src:url('../fonts/PPNeueMontreal-Regular.woff') format(‘woff’),
+      url('../fonts/PPNeueMontreal-Regular.otf') format('opentype');
+      font-weight: 400;
+      font-style: normal;
+}
+@font-face{
+  font-family:'PPNeueMontreal';
+  src:url('../fonts/PPNeueMontreal-Medium.woff') format(‘woff’),
+      url('../fonts/PPNeueMontreal-Medium.otf') format('opentype');
+      font-weight: 500;
+      font-style: normal;
+}
+@font-face{
+  font-family:'PPNeueMontreal';
+  src:url('../fonts/PPNeueMontreal-SemiBold.woff') format(‘woff’),
+      url('../fonts/PPNeueMontreal-SemiBold.otf') format('opentype');
+      font-weight: 600;
+      font-style: normal;
+}
+
+body{
+  font-family: var(--ppneuemontreal);
+  color: #333;
+  font-size: 14px;
+  line-height: 20px;
+}
