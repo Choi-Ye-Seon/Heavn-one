@@ -5,6 +5,10 @@ html.fixed {
   overflow-y: hidden;
 }
 
+#wrap{
+  min-width: 1440px;
+}
+
 /* Header */
 #header {
   display: flex;
@@ -12,8 +16,9 @@ html.fixed {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  min-width: 1440px;
   padding: 2rem 2rem 0;
-  inset: 0 0% auto auto;
+  inset: 0 auto auto 0;
   z-index: 10;
   font-family: var(--roboto-font);
 }

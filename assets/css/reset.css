@@ -1,3 +1,27 @@
+/* Fonts */
+@font-face{
+  font-family:'PPNeueMontreal';
+  src:url('../fonts/PPNeueMontreal-Regular.woff') format(‘woff’),
+      url('../fonts/PPNeueMontreal-Regular.otf') format('opentype');
+      font-weight: 400;
+      font-style: normal;
+}
+@font-face{
+  font-family:'PPNeueMontreal';
+  src:url('../fonts/PPNeueMontreal-Medium.woff') format(‘woff’),
+      url('../fonts/PPNeueMontreal-Medium.otf') format('opentype');
+      font-weight: 500;
+      font-style: normal;
+}
+@font-face{
+  font-family:'PPNeueMontreal';
+  src:url('../fonts/PPNeueMontreal-SemiBold.woff') format(‘woff’),
+      url('../fonts/PPNeueMontreal-SemiBold.otf') format('opentype');
+      font-weight: 600;
+      font-style: normal;
+}
+
+
 /* reset(초기화) */
 :root {
     -webkit-tap-highlight-color: transparent;
@@ -65,28 +89,6 @@ table {
   border-collapse: collapse;
 }
 
-/* Fonts */
-@font-face{
-  font-family:'PPNeueMontreal';
-  src:url('../fonts/PPNeueMontreal-Regular.woff') format(‘woff’),
-      url('../fonts/PPNeueMontreal-Regular.otf') format('opentype');
-      font-weight: 400;
-      font-style: normal;
-}
-@font-face{
-  font-family:'PPNeueMontreal';
-  src:url('../fonts/PPNeueMontreal-Medium.woff') format(‘woff’),
-      url('../fonts/PPNeueMontreal-Medium.otf') format('opentype');
-      font-weight: 500;
-      font-style: normal;
-}
-@font-face{
-  font-family:'PPNeueMontreal';
-  src:url('../fonts/PPNeueMontreal-SemiBold.woff') format(‘woff’),
-      url('../fonts/PPNeueMontreal-SemiBold.otf') format('opentype');
-      font-weight: 600;
-      font-style: normal;
-}
 
 body{
   font-family: var(--ppneuemontreal);

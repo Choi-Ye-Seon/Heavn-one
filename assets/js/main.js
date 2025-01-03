@@ -498,10 +498,8 @@ lineMask
 
 
 // 8. detail 모션
-gsap.set(".sc-detail .skizze-1 .skizze-text, .sc-detail .skizze-1 .skizze-tab",{opacity:0});
-gsap.set(".skizze-6",{autoAlpha:0});
-
-// gsap.set(".skizze-6 .skizze-text, .skizze-6 .skizze-tab",{opacity:0});
+gsap.set(".skizze-1 .skizze-text, .skizze-1 .skizze-tab",{opacity:0});
+gsap.set(".skizze-6 .skizze-text, .skizze-6 .skizze-tab",{opacity:0});
 
 const detail = gsap.timeline({
   scrollTrigger:{
@@ -511,60 +509,44 @@ const detail = gsap.timeline({
     scrub:1,
     // markers:true
   },
+
 });
 
 
 detail
+  // 90도
   .to([".skizze-2", ".skizze-3", ".skizze-5"], { rotate: -90,
     onComplete:function(){
       gsap.set('.sc-detail img.skizze-2',{autoAlpha:0});
+      gsap.set('.skizze-6 .skizze-text',{opacity:1});
     },
-    
   }, "a")
-  .to(".sc-detail .skizze-1 .skizze-text", { opacity: 1}, "a")
+  .to(".sc-detail .skizze-1 .skizze-text", { opacity: 1,
+    onComplete:function(){
+      gsap.set('.skizze-1 .skizze-text',{opacity:0});
+    }
+  }, "a")
 
+  //180도
   .to([".skizze-2", ".skizze-3", ".skizze-5"], { rotate: -180,
     onComplete:function(){
-      gsap.set(".sc-detail .skizze-1",{"z-index":6});
+      gsap.set('.skizze-6 .skizze-tab',{opacity:1});
     },
     onReverseComplete:function(){
       gsap.set('.sc-detail img.skizze-2',{autoAlpha:1});
-      gsap.set(".sc-detail .skizze-1",{"z-index":1});
+      gsap.set('.skizze-6 .skizze-text',{opacity:0});
     },
-
   }, "b")
-  .to(".sc-detail .skizze-1 .skizze-tab", { opacity: 1}, "b");
+  .to(".sc-detail .skizze-1 .skizze-tab", { opacity: 1,
+    onComplete:function(){
+      gsap.set('.skizze-1 .skizze-tab',{opacity:0});
+    }
+  }, "b");
   
+  detail.add(function() {
+    gsap.set('.skizze-6 .skizze-tab', {opacity: 0});
+  }, "-=0.001");
 
-//reversecomplete를 -180에서 되돌아갈 때 써야함. -90에서 한번에 쓰면 skkize가 초기 상태로 돌아갔을 때 실행되는 것임
-
-
-  // .to([".skizze-2", ".skizze-3", ".skizze-5"], { rotate: -180 }, "a")
-  // .to(".skizze-1 .skizze-text", { opacity: 1,
-  //   onComplete:function(){
-  //     gsap.to(".skizze-6 .skizze-text",{opacity:1});
-  //     gsap.to(".skizze-1 .skizze-text",{opacity:0});
-  //   },
-  //   onReverseComplete:function(){
-  //     gsap.to(".skizze-6 .skizze-text",{opacity:0});
-  //     gsap.to(".skizze-1 .skizze-text",{opacity:1});
-  //   }
-  //  }, "a")
-  // .to(".skizze-1 .skizze-tab",{opacity:1,
-  //   onComplete:function(){
-  //     gsap.to(".skizze-6 .skizze-tab",{opacity:1});
-  //     gsap.to(".skizze-1 .skizze-tab",{opacity:0});
-  //   },
-  //   onReverseComplete:function(){
-  //     gsap.to(".skizze-6 .skizze-tab",{opacity:0});
-  //     gsap.to(".skizze-1 .skizze-tab",{opacity:1});
-  //   }
-  // })  ;
-
-// 텍스트 노출될 때, skizze-1 .skizze-text 영역이 가려짐. 
-// skizze-6 .skizze-text의 z-index가 높아서 노출되어야 함.
-// skizze-1 .skizze-text이 opacity:1이 되었을 때 노출되어야 swap.png 이미지보다 위에 노출되지 않음...
-// 전체적으로 스크립트 확인해야함..
 
 
 //  detail orderBtn
