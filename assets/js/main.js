@@ -35,7 +35,7 @@ $(document).ready(function () {
         return `<span class="char">${char}</span>`;
       })
       .join('');
-    // console.log(wrappedText);
+
     const wrappedWord = `<span class="word">${wrappedText}</span>`;
     target.innerHTML = wrappedWord;
   });
